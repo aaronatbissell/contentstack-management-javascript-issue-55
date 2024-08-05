@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "commonjs",
+
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true,
+    "composite": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types",
+      "../../node_modules/@types"
+    ],
+    "types": ["jest", "node"]
+  },
+  "references": [],
+  "include": ["src"],
+  "exclude": ["node_modules", "../node_modules", "dist", "__mocks__"]
+}

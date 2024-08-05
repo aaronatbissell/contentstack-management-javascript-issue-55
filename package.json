@@ -1,0 +1,71 @@
+{
+  "name": "content-stack-client-tester",
+  "version": "1.0.0",
+  "description": "Trying to recreate issue 55 in @contentstack/management",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "config": {
+    "environment": "development",
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf dist build *.tsbuildinfo coverage test-report.xml",
+    "test": "JEST_JUNIT_SUITE_NAME=${npm_package_name} jest --roots=./src --passWithNoTests",
+    "build": "tsc -b tsconfig.json"
+  },
+  "dependencies": {
+    "@contentstack/management": "^1.17.0"
+  },
+  "devDependencies": {
+    "@types/config": "0.0.36",
+    "@types/jest": "^28.1.1",
+    "@types/node": "16.11.7",
+    "jest": "^28.1.0",
+    "jest-create-mock-instance": "^2.0.0",
+    "jest-haste-map": "^28.1.1",
+    "jest-junit": "^13.2.0",
+    "jest-mock": "^28.1.1",
+    "jest-mock-extended": "^2.0.6",
+    "jest-resolve": "^28.1.1",
+    "js-yaml": "3.13.1",
+    "lodash": "^4.17.21",
+    "nock": "^13.3.1",
+    "reflect-metadata": "0.1.13",
+    "ts-jest": "^28.0.4",
+    "typescript": "^4"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testMatch": [
+      "<rootDir>/**/?(*.)+(spec|test).ts?(x)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "<rootDir>/**/*.ts"
+    ],
+    "coverageReporters": [
+      "cobertura"
+    ]
+  },
+  "jest-junit": {
+    "outputName": "test-report.xml",
+    "classNameTemplate": "{filename}",
+    "titleTemplate": "{title}"
+  }
+}
